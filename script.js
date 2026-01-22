@@ -56,7 +56,7 @@ navbar.addEventListener("dblclick", function(e){
   }
 });
 
-// 6. 
+// 6. change card width when mouseover on 'view' button
 const view = document.querySelectorAll(".row")[1]; //select parent
 console.log(view)
 view.addEventListener("mouseover", function(e){
@@ -71,7 +71,7 @@ view.addEventListener("mouseover", function(e){
     targetCard.style.width = "20%";
 });
 
-// 6.1
+// 6.1 back to default when mouseout 'view' button
 const viewOut = document.querySelectorAll(".row")[1]; //select parent
 console.log(viewOut)
 viewOut.addEventListener("mouseout", function(e){
@@ -86,4 +86,15 @@ viewOut.addEventListener("mouseout", function(e){
   if (targetCard.style.width === "20%"){ // when mouseout condition back to default
     targetCard.style.width = "100%";
   }
+});
+
+// 7. move cards from bottom to top when grey button is clicked
+const greyBtn = document.querySelector(".btn.btn-secondary.my-2");
+console.log(greyBtn)
+greyBtn.addEventListener("click", function(e){
+  const cards = document.querySelectorAll(".row")[1];
+  const allCards = document.querySelectorAll(".col-md-4");
+  const firstCard = allCards[0];
+  const lastCard = allCards[allCards.length -1];
+  cards.insertBefore(lastCard, firstCard); // method takes 1.element to move, 2.element where 1 will be placed before
 });
