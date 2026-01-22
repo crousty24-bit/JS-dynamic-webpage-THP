@@ -12,7 +12,7 @@ footerCount.addEventListener("click", function(e){
     console.log(`Click N° ${count}`);
 });
 
-// 2.
+// 2. Make navbar 'Hamburger' menu work
 const btn = document.querySelector(".navbar-toggler");
 const nav = document.querySelector("#navbarHeader")
 console.log(btn);
