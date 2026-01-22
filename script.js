@@ -27,5 +27,18 @@ const firstBtn = document.querySelector(".btn.btn-sm.btn-success");
 console.log(card);
 console.log(firstBtn);
 firstBtn.addEventListener("click", function(e){
-  card.style.color = "red"
+  card.style.color = "red";
+});
+
+// 4. Change second card text color to green/default when button 'edit' is clicked
+const secondCard = document.getElementsByClassName("col-md-4")[1]; // index to find second class card
+const secondBtn = document.getElementsByClassName("btn btn-sm btn-outline-secondary")[1];
+console.log(secondCard);
+console.log(secondBtn);
+secondBtn.addEventListener("click", function(e){
+  if (secondCard.style.color === "green"){
+    secondCard.style.color = "black";
+  } else {
+    secondCard.style.color = "green";
+  };
 });
