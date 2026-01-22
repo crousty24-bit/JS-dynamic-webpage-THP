@@ -42,3 +42,16 @@ secondBtn.addEventListener("click", function(e){
     secondCard.style.color = "green";
   };
 });
+
+// 5. Disable/ enable stylesheet when navbar is double clicked
+const navbar = document.querySelector("header");
+console.log(navbar)
+const style = document.querySelector("link");
+console.log(style);
+navbar.addEventListener("dblclick", function(e){
+  if (style.disabled === true){
+    style.disabled = false;
+  } else {
+    style.disabled = true;
+  }
+});
