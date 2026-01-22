@@ -98,3 +98,15 @@ greyBtn.addEventListener("click", function(e){
   const lastCard = allCards[allCards.length -1];
   cards.insertBefore(lastCard, firstCard); // method takes 1.element to move, 2.element where 1 will be placed before
 });
+
+// 8. move cards from top to bottom when grey button is clicked
+const blueBtn = document.querySelector(".btn.btn-primary.my-2");
+console.log(blueBtn)
+blueBtn.addEventListener("click", function(e){
+  e.preventDefault(); // block link to reload page
+  const cards = document.querySelectorAll(".row")[1]; // parent
+  const allCards = document.querySelectorAll(".col-md-4"); // child
+  const firstCard = allCards[0]; // sibling
+  const lastCard = allCards[allCards.length -1]; // sibling
+  cards.insertBefore(firstCard, lastCard.nextSibling); // DIY .insertAfter using nextSibiling
+})
