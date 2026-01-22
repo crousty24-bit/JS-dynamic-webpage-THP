@@ -55,3 +55,35 @@ navbar.addEventListener("dblclick", function(e){
     style.disabled = true;
   }
 });
+
+// 6. 
+const view = document.querySelectorAll(".row")[1]; //select parent
+console.log(view)
+view.addEventListener("mouseover", function(e){
+  let targetBtn = e.target.closest("button.btn.btn-sm.btn-success"); //target filter 'view' button
+  if (targetBtn === null){ //if no 'view' btn nothing happens
+    return
+  }
+  let targetCard = targetBtn.closest(".col-md-4"); //find card from that specific 'view' btn
+  if (targetCard === null){
+    return
+  }
+    targetCard.style.width = "20%";
+});
+
+// 6.1
+const viewOut = document.querySelectorAll(".row")[1]; //select parent
+console.log(viewOut)
+viewOut.addEventListener("mouseout", function(e){
+  let targetBtn = e.target.closest("button.btn.btn-sm.btn-success"); //target filter 'view' button
+  if (targetBtn === null){ //if no 'view' btn nothing happens
+    return
+  }
+  let targetCard = targetBtn.closest(".col-md-4"); //find card from that specific 'view' btn
+  if (targetCard === null){
+    return
+  }
+  if (targetCard.style.width === "20%"){ // when mouseout condition back to default
+    targetCard.style.width = "100%";
+  }
+});
