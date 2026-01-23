@@ -64,24 +64,32 @@ view.addEventListener("mouseover", function(e){
   if (targetCard === null){
     return
   }
-    targetCard.style.width = "20%";
+  let img = targetCard.querySelector(".card-img-top"); // find child img
+  let text = targetCard.querySelector(".card-text"); // find child text
+  img.style.transform = "scale(0.2)"; // scale 20%
+  text.style.transform = "scale(0)";
+  img.style.transition = "transform 0.2s"; // add smooth transition
+  text.style.transition = "transform 0.2s";
 });
 
 // 6.1 back to default when mouseout 'view' button
 const viewOut = document.querySelectorAll(".row")[1]; //select parent
 
 viewOut.addEventListener("mouseout", function(e){
-  let targetBtn = e.target.closest("button.btn.btn-sm.btn-success"); //target filter 'view' button
-  if (targetBtn === null){ //if no 'view' btn nothing happens
+  let targetBtn = e.target.closest("button.btn.btn-sm.btn-success");
+  if (targetBtn === null){
     return
   }
-  let targetCard = targetBtn.closest(".col-md-4"); //find card from that specific 'view' btn
+  let targetCard = targetBtn.closest(".col-md-4");
   if (targetCard === null){
     return
   }
-  if (targetCard.style.width === "20%"){ // when mouseout condition back to default
-    targetCard.style.width = "100%";
-  }
+  let img = targetCard.querySelector(".card-img-top");
+  let text = targetCard.querySelector(".card-text");
+  img.style.transform = "scale(1)";
+  text.style.transform = "scale(1)";
+  img.style.transition = "transform 0.2s";
+  text.style.transition = "transform 0.2s";
 });
 
 // 7. move cards from bottom to top when grey button is clicked
