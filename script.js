@@ -20,9 +20,9 @@ btn.addEventListener("click", function(e){
   nav.classList.toggle("collapse");
 });
 
-// 3. Change first card text color to red when button 'view' is clicked
+// 3. Change first card text color to red when button 'edit' is clicked
 const card = document.querySelector(".col-md-4");
-const firstBtn = document.querySelector(".btn.btn-sm.btn-success");
+const firstBtn = document.querySelector(".btn.btn-sm.btn-outline-secondary");
 
 firstBtn.addEventListener("click", function(e){
   card.style.color = "red";
