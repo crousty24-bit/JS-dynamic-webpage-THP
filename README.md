@@ -25,11 +25,11 @@ Toggles the second card's text color between green and black when its "Edit" but
 ### Exercise 5: Stylesheet Toggle on Double-Click
 Disables or enables the Bootstrap stylesheet when the navbar header is double-clicked. Uses the `dblclick` event and manipulates the stylesheet's disabled property through the DOM.
 
-### Exercise 6: Card Width Animation on Hover
-Reduces card width to 20% when hovering over a "View" button. Implements advanced event delegation using `closest()` to filter the specific button that triggered the mouseover event.
+### Exercise 6: Card Width Animation on Hover ✓
+Reduces card width to 20% when hovering over a "View" button. Implements advanced event delegation using `closest()` to filter the specific button that triggered the mouseover event. On mouseover, the card image and text are scaled down to 20% with smooth CSS transitions for visual feedback.
 
-### Exercise 6.1: Card Width Restoration on Mouseout
-Restores card width to 100% when the mouse leaves a "View" button. Works in conjunction with Exercise 6 to provide smooth hover feedback, using the `mouseout` event.
+### Exercise 6.1: Card Width Restoration on Mouseout ✓
+Restores card width to 100% when the mouse leaves a "View" button. Works in conjunction with Exercise 6 to provide smooth hover feedback, using the `mouseout` event. Scales the image and text back to full size with matching transitions.
 
 ### Exercise 7: Move Cards Bottom-to-Top
 Moves the last card to the beginning of the card list when the grey back button (<=) is clicked. Uses DOM element reordering with the `insertBefore()` method to rearrange cards dynamically.
@@ -37,7 +37,14 @@ Moves the last card to the beginning of the card list when the grey back button 
 ### Exercise 8: Move Cards Top-to-Bottom
 Moves the first card to the end of the card list when the blue forward button (=>) is clicked. Implements a custom insertAfter functionality using `nextSibling` property, as JavaScript doesn't have a native insertAfter method.
 
-## Technical Stack
+### Exercise 9: Keyboard Press Body Class Toggle ✓
+Changes the body's CSS classes based on keyboard input when the navbar logo is focused. Pressing different keys applies different Bootstrap column classes:
+- Press 'a': applies `col-4` (left column)
+- Press 'y': applies `col-4 offset-md-4` (center column)
+- Press 'p': applies `col-4 offset-md-8` (right column)
+- Press 'b': resets body classes
+The logo is made focusable by adding a `tabindex` attribute, and a `keypress` event listener detects which key was pressed to apply the corresponding class.
+
 
 - **HTML5**: Semantic markup with Bootstrap 4.3.1 framework
 - **CSS**: Bootstrap styling with responsive grid layout
