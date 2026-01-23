@@ -1,7 +1,7 @@
 // 1. When user click on footer : display "click" in console
 const footer = document.querySelector("footer");
 footer.addEventListener("click", function(e){
-  console.log("click");
+  //console.log("click");
 });
 
 // 1.1 Update with count each time footer is clicked
@@ -106,3 +106,24 @@ blueBtn.addEventListener("click", function(e){
   const lastCard = allCards[allCards.length -1]; // sibling
   cards.insertBefore(firstCard, lastCard.nextSibling); // DIY .insertAfter using nextSibiling
 });
+
+// 9. keyboard press change body
+const logoSelec = document.querySelector(".navbar-brand.d-flex.align-items-center");
+//console.log(logoSelec);
+logoSelec.setAttribute("tabindex", "0"); //add tabindex to make logoSelec "focusable"
+const body = document.body; // var of body
+//console.log(body)
+
+logoSelec.addEventListener("keypress", function(e){
+  const targetKey = e.key; // target key pressed
+  body.className = ""; // reset of body before attributing new class
+  if (targetKey === "a"){
+    body.className = ("col-4");
+  } else if (targetKey === "y"){
+    body.className = ("col-4 offset-md-4");
+  } else if (targetKey === "p"){
+    body.className = ("col-4 offset-md-8");
+  } else if (targetKey === "b"){
+  }
+});
+
